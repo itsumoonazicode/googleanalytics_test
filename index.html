@@ -21,6 +21,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <script>
+        function getCookieArray(){
+            var arr = new Array();
+            if(document.cookie != ''){
+                var tmp = document.cookie.split(';');
+                for(var i=0;i<tmp.length;i++){
+                    var data = tmp[i].split('=');
+                    arr[data[0]] = decodeURIComponent(data[1]);
+                }
+            }
+            return arr;
+        }
+        var arr = getCookieArray();
+        var clientIdArr = arr["_ga"].split(".").slice(2);
+        var strClientId = clientIdArr.join(".");
+
+        var text = document.getElementById("clientId");
+        text.textContent = strClientId;
+    </script>
+    <h1 id="clientId"></h1>
 </body>
 </html>
