@@ -37,7 +37,7 @@
         var clientIdArr = arr["_ga"].split(".").slice(2);
         var strClientId = clientIdArr.join(".");
 
-        var text = document.getElementById("clientId");
+        document.getElementById("clientId").textContent = strClientId;
     </script>
     <h1 id="clientId"></h1>
 </body>
