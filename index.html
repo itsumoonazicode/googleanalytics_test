@@ -35,6 +35,7 @@
             return arr;
         }
         var arr = getCookieArray();
+        // クライアントID部分だけを抜き取る
         var clientIdArr = arr["_ga"].split(".").slice(2);
         var strClientId = clientIdArr.join(".");
 
